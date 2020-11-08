@@ -31,7 +31,8 @@ After understanding of business requirements, I needed to clean it up so that it
 ## EDA
 I looked at the distributions of the data and the value counts for the various categorical variables and evaluate univariate analyses for each features. Below are a few highlights from the pivot tables. 
 
-![alt text](https://github.com/vaibhavt14/Personalized-Cancer-Diagosis/blob/main/download.png "Class features for target variable")
+![alt text](https://github.com/vaibhavt14/Personalized-Cancer-Diagosis/blob/main/class_distribution.png "Class features for target variable")
+![alt text](https://github.com/vaibhavt14/Personalized-Cancer-Diagosis/blob/main/histogram.png "train data for univariate analysis")
 
 ## Model Building 
 
