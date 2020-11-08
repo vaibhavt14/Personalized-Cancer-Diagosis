@@ -10,14 +10,11 @@
 **For Web Framework Requirements:**  ```pip install -r requirements.txt```   
 
 ## Dataset
-* Features
-<ul>
-<li>Id: The id of the row used to link the mutation to the clinical evidence (Numerical)</li>
-<li>Gene:  The gene where this genetic mutation is located (Categorical)</li>
-<li>Variants: The aminoacid change for this mutations (Categorical)</li>
-<li>Text: Text collected from the clinical evidences (Text)</li>
-<li>Class: 1-9 the class this genetic mutation has been classified on (Numeric)</li>
-</ul>
+* Id: The id of the row used to link the mutation to the clinical evidence (Numerical)
+* Gene: The gene where this genetic mutation is located (Categorical)
+* Variants: The aminoacid change for this mutations (Categorical)
+* Text: Text collected from the clinical evidences (Text)
+* Class: 1-9 the class this genetic mutation has been classified on (Numeric)
 * Number of data points in train data: 2124
 * Number of data points in test data: 665
 * Number of data points in cross validation data: 532
@@ -32,31 +29,21 @@ After understanding of business requirements, I needed to clean it up so that it
 
 
 ## EDA
-I looked at the distributions of the data and the value counts for the various categorical variables. Below are a few highlights from the pivot tables. 
+I looked at the distributions of the data and the value counts for the various categorical variables and evaluate univariate analyses for each features. Below are a few highlights from the pivot tables. 
 
-![alt text](https://github.com/PlayingNumbers/ds_salary_proj/blob/master/salary_by_job_title.PNG "Salary by Position")
-![alt text](https://github.com/PlayingNumbers/ds_salary_proj/blob/master/positions_by_state.png "Job Opportunities by State")
-![alt text](https://github.com/PlayingNumbers/ds_salary_proj/blob/master/correlation_visual.png "Correlations")
+![alt text](https://github.com/vaibhavt14/Personalized-Cancer-Diagosis/blob/main/download.png "Class features for target variable")
 
 ## Model Building 
 
-First, I transformed the categorical variables into dummy variables. I also split the data into train and tests sets with a test size of 20%.   
+First, I transformed the text variables into machine learning models. I also split the data into train,tests and validation sets with a test size of 20%.   
 
-I tried three different models and evaluated them using Mean Absolute Error. I chose MAE because it is relatively easy to interpret and outliers aren’t particularly bad in for this type of model.   
-
-I tried three different models:
-*	**Multiple Linear Regression** – Baseline for the model
-*	**Lasso Regression** – Because of the sparse data from the many categorical variables, I thought a normalized regression like lasso would be effective.
-*	**Random Forest** – Again, with the sparsity associated with the data, I thought that this would be a good fit. 
+I tried different models and evaluated them using Multi class logg-loss and compare the logg-loss for each train,test,cross-validation  
 
 ## Model performance
-The Random Forest model far outperformed the other approaches on the test and validation sets. 
-*	**Random Forest** : MAE = 11.22
-*	**Linear Regression**: MAE = 18.86
-*	**Ridge Regression**: MAE = 19.67
-
-## Productionization 
-In this step, I built a flask API endpoint that was hosted on a local webserver by following along with the TDS tutorial in the reference section above. The API endpoint takes in a request with a list of values from a job listing and returns an estimated salary. 
+The Logistic model far outperformed the other approaches on the test and validation sets. 
+*	**Logistic Regression** : Log loss(Test data) = 1.048
+*	**Naive Bayes**: Log loss(Test data) = 1.21
+*	**Linear SVM**: Log loss(Test data) = 1.063
 
 
 
