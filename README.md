@@ -7,7 +7,6 @@
 ## Code and Resources Used 
 **Python Version:** 3.7  
 **Packages:** pandas, numpy, sklearn, matplotlib, seaborn,pickle,re,nltk
-**For Web Framework Requirements:**  ```pip install -r requirements.txt```   
 
 ## Dataset
 * Id: The id of the row used to link the mutation to the clinical evidence (Numerical)
